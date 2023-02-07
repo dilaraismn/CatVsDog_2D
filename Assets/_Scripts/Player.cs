@@ -24,8 +24,9 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             float holdDownTime = Time.time - this.holdDownStartTime;
-            _bone.ThrowBone(CalculateForce(holdDownTime));
+            
             // THROW
+            _bone.ThrowBone(CalculateForce(holdDownTime));
         }
     }
 
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
     {
         float maxForceHoldTime = 1f;
         float holdTimeNormalized = Mathf.Clamp01(holdTime / maxForceHoldTime);
-        float throwForce = holdTimeNormalized * throwPower;
+        float throwForce = holdTimeNormalized * throwPower * 60;
         print(throwForce);
         return throwForce;
     }

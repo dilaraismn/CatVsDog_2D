@@ -18,8 +18,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/_Scripts/Testing.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Player.cs" />
       </list>
     </option>
   </component>

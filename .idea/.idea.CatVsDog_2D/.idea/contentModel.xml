@@ -9,7 +9,6 @@
         <e p="_Scripts" t="Include">
           <e p="Bone.cs" t="Include" />
           <e p="Player.cs" t="Include" />
-          <e p="Testing.cs" t="Include" />
         </e>
       </e>
       <e p="CatVsDog_2D.sln" t="IncludeFlat" />

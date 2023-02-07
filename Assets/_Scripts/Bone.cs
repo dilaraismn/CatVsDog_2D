@@ -15,7 +15,7 @@ public class Bone : MonoBehaviour
 
     void Start()
     {
-        
+        _rigidbody2D.isKinematic = true;
     }
 
     void Update()
@@ -26,8 +26,8 @@ public class Bone : MonoBehaviour
 
     public void ThrowBone(float force)
     {
-        print("oldu");
+        _rigidbody2D.isKinematic = false;
         var direction = Vector2.up + Vector2.left;
-        _rigidbody2D.velocity = direction * force * 75;
+        _rigidbody2D.velocity = direction * force;
     }
 }
