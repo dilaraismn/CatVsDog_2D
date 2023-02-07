@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             throwForce = 0;
+            print("full");
             return;
         }
         
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
                 return;
             }
             throwForce += Time.deltaTime;
+            print(throwForce);
         }
     }
 }
