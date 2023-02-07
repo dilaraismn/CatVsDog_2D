@@ -1,37 +1,40 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float maxMouseHoldTime = 3;
-    private float throwForce;
-    
-    void Start()
+    [SerializeField] private float throwPower = 500f;
+    private float holdDownStartTime;
+    private Bone _bone;
+
+    private void Awake()
     {
-        
+        _bone = FindObjectOfType<Bone>();
     }
 
-    void Update()
+    private void Update()
     {
-        //TO DO: COUNTER IF DOESN'T PRESS IN 3 SECS CANT THROW
+        if (Input.GetMouseButtonDown(0))
+        {
+            holdDownStartTime = Time.time;
+        }
+
         if (Input.GetMouseButtonUp(0))
         {
-            throwForce = 0;
-            print("full");
-            return;
+            float holdDownTime = Time.time - this.holdDownStartTime;
+            _bone.ThrowBone(CalculateForce(holdDownTime));
+            // THROW
         }
-        
-        if (Input.GetMouseButton(0))
-        {
-            if (throwForce >= maxMouseHoldTime)
-            {
-                //MAX VALUE
-                //TO DO: AUTO THROW
-                return;
-            }
-            throwForce += Time.deltaTime;
-            print(throwForce);
-        }
+    }
+
+    private float CalculateForce(float holdTime)
+    {
+        float maxForceHoldTime = 1f;
+        float holdTimeNormalized = Mathf.Clamp01(holdTime / maxForceHoldTime);
+        float throwForce = holdTimeNormalized * throwPower;
+        print(throwForce);
+        return throwForce;
     }
 }
