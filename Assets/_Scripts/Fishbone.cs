@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,15 @@ public class Fishbone : MonoBehaviour
         canRespawnFishbone = false;
         this._rigidbody2D.isKinematic = true;
     }
-    
+
+    private void Update()
+    {
+        if (CatEnemy.catIsDead)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void ThrowFishbone(float force)
     {
         _rigidbody2D.isKinematic = false;

@@ -8,6 +8,7 @@ public class DogEnemy : MonoBehaviour
     [SerializeField] private Image healthBar;
     private Animator _animator;
     private float dogHealthealth;
+    public static bool dogIsDead;
     
 
     private void Awake()
@@ -19,6 +20,7 @@ public class DogEnemy : MonoBehaviour
     void Start()
     {
         dogHealthealth = 100;
+        dogIsDead = false;
     }
 
     void Update()
@@ -44,6 +46,7 @@ public class DogEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         this.enabled = false;
+        dogIsDead = true;
         //TO DO: WIN UI
         //TO DO: GAME END
     }

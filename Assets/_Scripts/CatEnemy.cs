@@ -8,6 +8,7 @@ public class CatEnemy : MonoBehaviour
     [SerializeField] private Image healthBar;
     private Animator _animator;
     private float catHealth;
+    public static bool catIsDead;
     
 
     private void Awake()
@@ -19,6 +20,7 @@ public class CatEnemy : MonoBehaviour
     void Start()
     {
         catHealth = 100;
+        catIsDead = false;
     }
 
     void Update()
@@ -44,6 +46,7 @@ public class CatEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         this.enabled = false;
+        catIsDead = true;
         //TO DO: WIN UI
         //TO DO: GAME END
     }

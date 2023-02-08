@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="217ec239-fb67-40f6-af75-b05f092238eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CatPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CatPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DogEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/DogEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Fishbone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Fishbone.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <updated>1675759633435</updated>
       <workItem from="1675759644410" duration="2521000" />
       <workItem from="1675800611245" duration="1132000" />
-      <workItem from="1675835825942" duration="10968000" />
+      <workItem from="1675835825942" duration="11798000" />
     </task>
     <servers />
   </component>

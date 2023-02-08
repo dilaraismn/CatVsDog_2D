@@ -19,7 +19,15 @@ public class Bone : MonoBehaviour
         canRespawnBone = false;
         this._rigidbody2D.isKinematic = true;
     }
-    
+
+    private void Update()
+    {
+        if (DogEnemy.dogIsDead)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void ThrowBone(float force)
     {
         _rigidbody2D.isKinematic = false;
