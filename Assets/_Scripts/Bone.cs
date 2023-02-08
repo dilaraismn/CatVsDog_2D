@@ -14,29 +14,18 @@ public class Bone : MonoBehaviour
         _rigidbody2D = this.GetComponent<Rigidbody2D>();
     }
 
-    void Start()
-    {
-    }
-
     private void OnEnable()
     {
         canRespawn = false;
         this._rigidbody2D.isKinematic = true;
     }
-
-    void Update()
-    {
-       
-        
-    }
-
+    
     public void ThrowBone(float force)
     {
         _rigidbody2D.isKinematic = false;
         var direction = Vector2.up + Vector2.left;
         _rigidbody2D.velocity = direction * force;
     }
-    
     
     private void OnTriggerEnter2D(Collider2D other)
     {

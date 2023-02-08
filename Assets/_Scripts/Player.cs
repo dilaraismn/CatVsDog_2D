@@ -12,9 +12,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject forceBarObject;
     private float throwPower = 1000f;
     private float holdDownStartTime;
+    private Animator _animator;
     private Bone _bone;
     private GameObject currentBone { get; set; }
-    private Animator _animator;
+    private bool canThrow { get; set; }
 
     private void Awake()
     {
@@ -25,16 +26,18 @@ public class Player : MonoBehaviour
     {
         forceBar =forceBar.GetComponent<Image>();
         forceBar.fillAmount = 0;
-        
-       CreateBone();
+        CreateBone();
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            holdDownStartTime = Time.time;
-            forceBarObject.SetActive(true);
+            if(canThrow)
+            {
+                holdDownStartTime = Time.time;
+                forceBarObject.SetActive(true);
+            }
         }
 
         if (Input.GetMouseButton(0))
@@ -43,12 +46,15 @@ public class Player : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            forceBar.fillAmount = 0;
-            float holdDownTime = Time.time - this.holdDownStartTime;
-            // THROW
-            _animator.Play("Jump");
-            _bone.ThrowBone(CalculateForce(holdDownTime));
-            forceBarObject.SetActive(false);
+            if (canThrow)
+            {
+                forceBar.fillAmount = 0;
+                float holdDownTime = Time.time - this.holdDownStartTime;
+                _animator.Play("Jump");
+                _bone.ThrowBone(CalculateForce(holdDownTime));
+                forceBarObject.SetActive(false);
+                canThrow = false;
+            }
         }
         
         if(Bone.canRespawn)
@@ -61,6 +67,8 @@ public class Player : MonoBehaviour
     {
         currentBone = Instantiate(bonePrefab, boneParent.transform.position,Quaternion.identity, boneParent.transform);
         _bone = currentBone.GetComponent<Bone>();
+        canThrow = true;
+        forceBar.fillAmount = 0;
     }
     private float CalculateForce(float holdTime)
     {
