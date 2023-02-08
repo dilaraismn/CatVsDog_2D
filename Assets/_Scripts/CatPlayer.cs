@@ -14,12 +14,14 @@ public class CatPlayer : MonoBehaviour
     private float holdDownStartTime;
     private Animator _animator;
     private Fishbone _fishbone;
+    private GameManager _gameManager;
     private GameObject currentFishbone { get; set; }
     private bool canThrow { get; set; }
     
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Start()
@@ -55,12 +57,14 @@ public class CatPlayer : MonoBehaviour
                 _fishbone.ThrowFishbone(CalculateForce(holdDownTime));
                 forceBarObject.SetActive(false);
                 canThrow = false;
+                _gameManager.canChangePlayer = false;
             }
         }
         
         if(Fishbone.canRespawnFishbone)
         {
             CreateFishbone();
+            _gameManager.canChangePlayer = true;
         }
     }
     

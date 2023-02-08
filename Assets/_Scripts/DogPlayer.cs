@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class DogPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject bonePrefab;
     [SerializeField] private Transform boneParent;
@@ -14,12 +14,14 @@ public class Player : MonoBehaviour
     private float holdDownStartTime;
     private Animator _animator;
     private Bone _bone;
+    private GameManager _gameManager;
     private GameObject currentBone { get; set; }
     private bool canThrow { get; set; }
 
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Start()
@@ -55,12 +57,14 @@ public class Player : MonoBehaviour
                 _bone.ThrowBone(CalculateForce(holdDownTime));
                 forceBarObject.SetActive(false);
                 canThrow = false;
+                _gameManager.canChangePlayer = false;
             }
         }
         
         if(Bone.canRespawnBone)
         {
             CreateBone();
+            _gameManager.canChangePlayer = true;
         }
     }
 

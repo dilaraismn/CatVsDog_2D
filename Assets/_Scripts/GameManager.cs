@@ -5,22 +5,24 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject dogPlayerObject, catPlayerObject;
-    private Player _dogPlayer;
+    private DogPlayer _dogPlayer;
     private CatPlayer _catPlayer;
-    private bool isPlayerDog { get; set; } //isDog's turn
+    private bool isPlayerDog { get; set; }
+    public bool canChangePlayer { get; set; }//isDog's turn
     void Start()
     {
-        _dogPlayer = dogPlayerObject.GetComponent<Player>();
+        _dogPlayer = dogPlayerObject.GetComponent<DogPlayer>();
         _catPlayer = catPlayerObject.GetComponent<CatPlayer>();
+        canChangePlayer = false;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canChangePlayer)
         {
             isPlayerDog = !isPlayerDog;
-            print(isPlayerDog);
         }
+        
         if (isPlayerDog)
         {
             _dogPlayer.enabled = false;
