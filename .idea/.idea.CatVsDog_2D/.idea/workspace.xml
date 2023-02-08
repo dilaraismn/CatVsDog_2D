@@ -6,10 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="217ec239-fb67-40f6-af75-b05f092238eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/CatBone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/CatBone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/DogBone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/DogBone.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CatPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CatPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DogEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/DogEnemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +28,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/NetworkInputData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/BasicSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30dfda8fa79a431d80262ee17a16696d8ee00/f0/fb8c4743/NetworkInput.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Bone.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -83,7 +92,7 @@
       <updated>1675759633435</updated>
       <workItem from="1675759644410" duration="2521000" />
       <workItem from="1675800611245" duration="1132000" />
-      <workItem from="1675835825942" duration="18627000" />
+      <workItem from="1675835825942" duration="24140000" />
     </task>
     <servers />
   </component>
