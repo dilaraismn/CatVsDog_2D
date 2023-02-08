@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="217ec239-fb67-40f6-af75-b05f092238eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animation/Dog.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animation/Dog.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animation/Image_Cat.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animation/Image_Cat.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animation/Image_Dog.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Animation/Image_Dog.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/DogBone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/DogBone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="217ec239-fb67-40f6-af75-b05f092238eb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +77,7 @@
       <updated>1675759633435</updated>
       <workItem from="1675759644410" duration="2521000" />
       <workItem from="1675800611245" duration="1132000" />
-      <workItem from="1675835825942" duration="2566000" />
+      <workItem from="1675835825942" duration="2993000" />
     </task>
     <servers />
   </component>
