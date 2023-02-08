@@ -8,10 +8,12 @@ public class Bone : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     public static bool canRespawnBone;
+    private GameManager _gameManager;
 
     private void Awake()
     {
         _rigidbody2D = this.GetComponent<Rigidbody2D>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnEnable()
@@ -40,12 +42,14 @@ public class Bone : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             canRespawnBone = true;
+            _gameManager.ChangePlayer();
             Destroy(this.gameObject);
         }
 
         if (other.CompareTag("Cat"))
         {
             canRespawnBone = true;
+            _gameManager.ChangePlayer();
             Destroy(this.gameObject);
         }
     }

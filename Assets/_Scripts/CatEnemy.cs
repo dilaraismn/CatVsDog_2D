@@ -9,12 +9,14 @@ public class CatEnemy : MonoBehaviour
     private Animator _animator;
     private float catHealth;
     public static bool catIsDead;
-    
+    private GameManager _gameManager;
+
 
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
         healthBar = healthBar.GetComponent<Image>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     void Start()
@@ -39,6 +41,7 @@ public class CatEnemy : MonoBehaviour
             _animator.Play("Hurt");
             catHealth -= 20; //20
             healthBar.fillAmount = (catHealth / 100);
+            _gameManager.ChangePlayer();
         }
     }
 

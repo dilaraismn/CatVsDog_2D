@@ -9,12 +9,14 @@ public class DogEnemy : MonoBehaviour
     private Animator _animator;
     private float dogHealthealth;
     public static bool dogIsDead;
+    private GameManager _gameManager;
     
 
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
         healthBar = healthBar.GetComponent<Image>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     void Start()
@@ -39,6 +41,7 @@ public class DogEnemy : MonoBehaviour
             _animator.Play("Hurt");
             dogHealthealth -= 20; //20
             healthBar.fillAmount = (dogHealthealth / 100);
+            _gameManager.ChangePlayer();
         }
     }
 

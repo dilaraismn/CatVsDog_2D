@@ -57,14 +57,12 @@ public class DogPlayer : MonoBehaviour
                 _bone.ThrowBone(CalculateForce(holdDownTime));
                 forceBarObject.SetActive(false);
                 canThrow = false;
-                _gameManager.canChangePlayer = false;
             }
         }
         
-        if(Bone.canRespawnBone)
+        if(Bone.canRespawnBone && _gameManager.isPlayerDog)
         {
             CreateBone();
-            _gameManager.canChangePlayer = true;
         }
     }
 

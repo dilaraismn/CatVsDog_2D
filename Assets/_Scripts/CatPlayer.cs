@@ -57,14 +57,13 @@ public class CatPlayer : MonoBehaviour
                 _fishbone.ThrowFishbone(CalculateForce(holdDownTime));
                 forceBarObject.SetActive(false);
                 canThrow = false;
-                _gameManager.canChangePlayer = false;
+               // _gameManager.canChangePlayer = false;
             }
         }
         
-        if(Fishbone.canRespawnFishbone)
+        if(Fishbone.canRespawnFishbone && (_gameManager.isPlayerDog == false))
         {
             CreateFishbone();
-            _gameManager.canChangePlayer = true;
         }
     }
     

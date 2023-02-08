@@ -7,10 +7,12 @@ public class Fishbone : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     public static bool canRespawnFishbone;
+    private GameManager _gameManager;
     
     private void Awake()
     {
         _rigidbody2D = this.GetComponent<Rigidbody2D>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnEnable()
@@ -39,12 +41,14 @@ public class Fishbone : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             canRespawnFishbone = true;
+            _gameManager.ChangePlayer();
             Destroy(this.gameObject);
         }
 
         if (other.CompareTag("Dog"))
         {
             canRespawnFishbone = true;
+            _gameManager.ChangePlayer();
             Destroy(this.gameObject);
         }
     }
