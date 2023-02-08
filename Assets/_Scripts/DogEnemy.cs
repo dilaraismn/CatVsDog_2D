@@ -1,0 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DogEnemy : MonoBehaviour
+{
+    [SerializeField] private Image healthBar;
+    private Animator _animator;
+    private float dogHealthealth;
+    
+
+    private void Awake()
+    {
+        _animator = GetComponentInChildren<Animator>();
+        healthBar = healthBar.GetComponent<Image>();
+    }
+
+    void Start()
+    {
+        dogHealthealth = 100;
+    }
+
+    void Update()
+    {
+        if (dogHealthealth <= 0)
+        {
+            _animator.Play("Dead");
+            StartCoroutine(Dead());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("CatBone"))
+        {
+            _animator.Play("Hurt");
+            dogHealthealth -= 20; //20
+            healthBar.fillAmount = (dogHealthealth / 100);
+        }
+    }
+
+    IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(.5f);
+        this.enabled = false;
+        //TO DO: WIN UI
+        //TO DO: GAME END
+    }
+}

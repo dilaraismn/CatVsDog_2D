@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Enemy
   - Bone
+  - CatBone
+  - Cat
+  - Dog
   layers:
   - Default
   - TransparentFX

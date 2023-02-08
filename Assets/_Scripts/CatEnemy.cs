@@ -1,14 +1,13 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class CatEnemy : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
     private Animator _animator;
-    private float health;
+    private float catHealth;
     
 
     private void Awake()
@@ -19,12 +18,12 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        health = 100;
+        catHealth = 100;
     }
 
     void Update()
     {
-        if (health <= 0)
+        if (catHealth <= 0)
         {
             _animator.Play("Dead");
             StartCoroutine(Dead());
@@ -36,8 +35,8 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Bone"))
         {
             _animator.Play("Hurt");
-            health -= 20; //20
-            healthBar.fillAmount = (health / 100);
+            catHealth -= 20; //20
+            healthBar.fillAmount = (catHealth / 100);
         }
     }
 

@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
 using UnityEngine;
 
-public class Bone : MonoBehaviour
+public class Fishbone : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
-    public static bool canRespawnBone;
-
+    public static bool canRespawnFishbone;
+    
     private void Awake()
     {
         _rigidbody2D = this.GetComponent<Rigidbody2D>();
@@ -16,14 +14,14 @@ public class Bone : MonoBehaviour
 
     private void OnEnable()
     {
-        canRespawnBone = false;
+        canRespawnFishbone = false;
         this._rigidbody2D.isKinematic = true;
     }
     
-    public void ThrowBone(float force)
+    public void ThrowFishbone(float force)
     {
         _rigidbody2D.isKinematic = false;
-        var direction = Vector2.up + Vector2.left;
+        var direction = Vector2.up + Vector2.right;
         _rigidbody2D.velocity = direction * force;
     }
     
@@ -31,13 +29,13 @@ public class Bone : MonoBehaviour
     {
         if (other.CompareTag("Ground"))
         {
-            canRespawnBone = true;
+            canRespawnFishbone = true;
             Destroy(this.gameObject);
         }
 
-        if (other.CompareTag("Cat"))
+        if (other.CompareTag("Dog"))
         {
-            canRespawnBone = true;
+            canRespawnFishbone = true;
             Destroy(this.gameObject);
         }
     }

@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="217ec239-fb67-40f6-af75-b05f092238eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Enemy.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +22,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Bone.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -80,7 +85,7 @@
       <updated>1675759633435</updated>
       <workItem from="1675759644410" duration="2521000" />
       <workItem from="1675800611245" duration="1132000" />
-      <workItem from="1675835825942" duration="5675000" />
+      <workItem from="1675835825942" duration="9872000" />
     </task>
     <servers />
   </component>

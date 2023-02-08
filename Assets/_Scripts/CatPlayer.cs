@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class CatPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject bonePrefab;
-    [SerializeField] private Transform boneParent;
+    [SerializeField] private GameObject fishbonePrefab;
+    [SerializeField] private Transform fishboneParent;
     [SerializeField] private Image forceBar;
     [SerializeField] private GameObject forceBarObject;
     private float throwPower = 1000f;
     private float holdDownStartTime;
     private Animator _animator;
-    private Bone _bone;
-    private GameObject currentBone { get; set; }
+    private Fishbone _fishbone;
+    private GameObject currentFishbone { get; set; }
     private bool canThrow { get; set; }
-
+    
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     {
         forceBar =forceBar.GetComponent<Image>();
         forceBar.fillAmount = 0;
-        CreateBone();
+        CreateFishbone();
     }
 
     private void Update()
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
                 forceBarObject.SetActive(true);
             }
         }
-
+        
         if (Input.GetMouseButton(0))
         {
             forceBar.fillAmount += 0.0015f;
@@ -52,25 +52,26 @@ public class Player : MonoBehaviour
                 forceBar.fillAmount = 0;
                 float holdDownTime = Time.time - this.holdDownStartTime;
                 _animator.Play("Jump");
-                _bone.ThrowBone(CalculateForce(holdDownTime));
+                _fishbone.ThrowFishbone(CalculateForce(holdDownTime));
                 forceBarObject.SetActive(false);
                 canThrow = false;
             }
         }
         
-        if(Bone.canRespawnBone)
+        if(Fishbone.canRespawnFishbone)
         {
-            CreateBone();
+            CreateFishbone();
         }
     }
-
-    private void CreateBone()
+    
+    private void CreateFishbone()
     {
-        currentBone = Instantiate(bonePrefab, boneParent.transform.position,Quaternion.identity, boneParent.transform);
-        _bone = currentBone.GetComponent<Bone>();
+        currentFishbone = Instantiate(fishbonePrefab, fishboneParent.transform.position,Quaternion.identity, fishboneParent.transform);
+        _fishbone = currentFishbone.GetComponent<Fishbone>();
         canThrow = true;
         forceBar.fillAmount = 0;
     }
+    
     private float CalculateForce(float holdTime)
     {
         float maxForceHoldTime = 2f;
