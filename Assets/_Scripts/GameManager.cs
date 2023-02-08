@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject dogPlayerObject, catPlayerObject;
+    [SerializeField] private GameObject dogIndicator, catIndicator;
     private DogPlayer _dogPlayer;
     private CatPlayer _catPlayer;
     public bool isPlayerDog { get; set; }
@@ -23,11 +24,15 @@ public class GameManager : MonoBehaviour
         {
             _dogPlayer.enabled = true;
             _catPlayer.enabled = false;
+            dogIndicator.SetActive(true);
+            catIndicator.SetActive(false);
         }
         else
         {
-            _dogPlayer.enabled = false;
             _catPlayer.enabled = true;
+            _dogPlayer.enabled = false;
+            dogIndicator.SetActive(false);
+            catIndicator.SetActive(true);
         }
     }
 

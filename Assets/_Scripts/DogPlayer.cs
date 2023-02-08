@@ -28,7 +28,11 @@ public class DogPlayer : MonoBehaviour
     {
         forceBar =forceBar.GetComponent<Image>();
         forceBar.fillAmount = 0;
-        CreateBone();
+
+        if (_gameManager.isPlayerDog)
+        {
+            CreateBone();
+        }
     }
 
     private void Update()

@@ -57,7 +57,6 @@ public class CatPlayer : MonoBehaviour
                 _fishbone.ThrowFishbone(CalculateForce(holdDownTime));
                 forceBarObject.SetActive(false);
                 canThrow = false;
-               // _gameManager.canChangePlayer = false;
             }
         }
         
