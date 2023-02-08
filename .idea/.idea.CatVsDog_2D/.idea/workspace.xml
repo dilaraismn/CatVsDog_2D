@@ -26,19 +26,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/NetworkInputData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/BasicSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30dfda8fa79a431d80262ee17a16696d8ee00/f0/fb8c4743/NetworkInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ParabolaController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MathParabola.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/Parabola/Parabola/ParabolaController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/Parabola/Parabola/MathParabola.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Bone.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/_Scripts/Testing.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Player.cs" />
+        <option value="$USER_HOME$/Downloads/Parabola/Parabola/MathParabola.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/MathParabola.cs" />
+        <option value="$USER_HOME$/Downloads/Parabola/Parabola/ParabolaController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/ParabolaController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" />
       </list>
     </option>
   </component>
@@ -65,9 +70,8 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -75,9 +79,8 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -93,6 +96,8 @@
       <workItem from="1675759644410" duration="2521000" />
       <workItem from="1675800611245" duration="1132000" />
       <workItem from="1675835825942" duration="24140000" />
+      <workItem from="1675881602398" duration="790000" />
+      <workItem from="1675882495423" duration="2705000" />
     </task>
     <servers />
   </component>
@@ -112,6 +117,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

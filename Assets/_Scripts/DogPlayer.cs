@@ -58,7 +58,8 @@ public class DogPlayer : MonoBehaviour
                 forceBar.fillAmount = 0;
                 float holdDownTime = Time.time - this.holdDownStartTime;
                 _animator.Play("Jump");
-                _bone.ThrowBone(CalculateForce(holdDownTime));
+                //_bone.ThrowBone(CalculateForce(holdDownTime));
+                _bone.ThrowBone();
                 forceBarObject.SetActive(false);
                 canThrow = false;
             }
