@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Bone"))
         {
             _animator.Play("Hurt");
-            health -= 40; //20
+            health -= 20; //20
             healthBar.fillAmount = (health / 100);
         }
     }

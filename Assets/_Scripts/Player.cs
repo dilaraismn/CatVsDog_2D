@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bonePrefab;
     [SerializeField] private Transform boneParent;
     [SerializeField] private Image forceBar;
+    [SerializeField] private GameObject forceBarObject;
     private float throwPower = 1000f;
     private float holdDownStartTime;
     private Bone _bone;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             holdDownStartTime = Time.time;
+            forceBarObject.SetActive(true);
         }
 
         if (Input.GetMouseButton(0))
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
             // THROW
             _animator.Play("Jump");
             _bone.ThrowBone(CalculateForce(holdDownTime));
+            forceBarObject.SetActive(false);
         }
         
         if(Bone.canRespawn)
