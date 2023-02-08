@@ -9,13 +9,15 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bonePrefab;
     [SerializeField] private Transform boneParent;
     [SerializeField] private Image forceBar;
-    private float throwPower = 2000f;
+    private float throwPower = 1000f;
     private float holdDownStartTime;
     private Bone _bone;
     private GameObject currentBone { get; set; }
+    private Animator _animator;
 
     private void Awake()
     {
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -42,6 +44,7 @@ public class Player : MonoBehaviour
             forceBar.fillAmount = 0;
             float holdDownTime = Time.time - this.holdDownStartTime;
             // THROW
+            _animator.Play("Jump");
             _bone.ThrowBone(CalculateForce(holdDownTime));
         }
         
