@@ -49,7 +49,7 @@ public class DogPlayer : MonoBehaviour
         {
             if (mouseDown)
             {
-                forceBar.fillAmount += 0.0015f;
+                forceBar.fillAmount += 0.0017f;
             }
         }
         
@@ -59,7 +59,9 @@ public class DogPlayer : MonoBehaviour
             float holdDownTime = Time.time - this.holdDownStartTime;
             _animator.Play("Jump");
             float calculatedForce = CalculateForce(holdDownTime);
-            _bone.ThrowBone(calculatedForce, calculatedForce * 2);
+            float fixedForce = Mathf.Clamp(calculatedForce, 120, 380);
+            print(fixedForce);
+            _bone.ThrowBone(fixedForce, fixedForce * 2);
             forceBarObject.SetActive(false);
             canThrow = false;
             mouseDown = false;
