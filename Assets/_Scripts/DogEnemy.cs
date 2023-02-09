@@ -39,7 +39,7 @@ public class DogEnemy : MonoBehaviour
         if (other.CompareTag("CatBone"))
         {
             _animator.Play("Hurt");
-            dogHealthealth -= 20; //20
+            dogHealthealth -= 20;
             healthBar.fillAmount = (dogHealthealth / 100);
             _gameManager.ChangePlayer();
         }
@@ -48,9 +48,10 @@ public class DogEnemy : MonoBehaviour
     IEnumerator Dead()
     {
         yield return new WaitForSeconds(.5f);
-        this.enabled = false;
         dogIsDead = true;
         _gameManager.isGameOver = true;
+        _gameManager.isWinnerDog = false;
         _gameManager.GameOver();
+        this.enabled = false;
     }
 }

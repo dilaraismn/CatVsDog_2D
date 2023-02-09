@@ -59,7 +59,7 @@ public class Bone : MonoBehaviour
         if (other.CompareTag("Cat"))
         {
             canRespawnBone = true;
-            _gameManager.ChangePlayer();
+            //_gameManager.ChangePlayer();
             Destroy(this.gameObject);
         }
 

@@ -51,6 +51,7 @@ public class CatEnemy : MonoBehaviour
         this.enabled = false;
         catIsDead = true;
         _gameManager.isGameOver = true;
+        _gameManager.isWinnerDog = true;
         _gameManager.GameOver();
         //TO DO: WIN UI
         //TO DO: GAME END

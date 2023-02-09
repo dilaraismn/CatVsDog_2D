@@ -51,7 +51,7 @@ public class Fishbone : MonoBehaviour
         if (other.CompareTag("Dog"))
         {
             canRespawnFishbone = true;
-            _gameManager.ChangePlayer();
+            //_gameManager.ChangePlayer();
             Destroy(this.gameObject);
         }
         if (other.CompareTag("MiddleWall"))

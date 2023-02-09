@@ -8,10 +8,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject dogPlayerObject, catPlayerObject;
     [SerializeField] private GameObject dogIndicator, catIndicator;
-    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject gameOverUI, catWinImage, dogWinImage;
     private DogPlayer _dogPlayer;
     private CatPlayer _catPlayer;
     public bool isPlayerDog { get; set; }
+    public bool isWinnerDog { get; set; }
     public bool isGameOver { get; set; }
 
     private void Awake()
@@ -49,6 +50,17 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         gameOverUI.SetActive(true);
+
+        if (isWinnerDog)
+        {
+            catWinImage.SetActive(false);
+            dogWinImage.SetActive(true);
+        }
+        else
+        {
+            catWinImage.SetActive(true);
+            dogWinImage.SetActive(false);
+        }
     }
 
     public void RestartGame()
