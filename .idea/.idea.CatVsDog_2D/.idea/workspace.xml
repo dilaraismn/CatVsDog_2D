@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="217ec239-fb67-40f6-af75-b05f092238eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/CatBone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/CatBone.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/DogBone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/DogBone.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CatEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DogEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/DogEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CatPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CatPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Fishbone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Fishbone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +28,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ParabolaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MathParabola.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/Parabola/Parabola/ParabolaController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/Parabola/Parabola/MathParabola.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Bone.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -70,8 +70,9 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -79,8 +80,9 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -98,6 +100,7 @@
       <workItem from="1675835825942" duration="24140000" />
       <workItem from="1675881602398" duration="790000" />
       <workItem from="1675882495423" duration="2705000" />
+      <workItem from="1675923054292" duration="7314000" />
     </task>
     <servers />
   </component>

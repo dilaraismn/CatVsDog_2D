@@ -10,7 +10,7 @@ public class CatPlayer : MonoBehaviour
     [SerializeField] private Transform fishboneParent;
     [SerializeField] private Image forceBar;
     [SerializeField] private GameObject forceBarObject;
-    private float throwPower = 1000f;
+    private float throwPower = 600;
     private float holdDownStartTime;
     private Animator _animator;
     private Fishbone _fishbone;
@@ -54,7 +54,8 @@ public class CatPlayer : MonoBehaviour
                 forceBar.fillAmount = 0;
                 float holdDownTime = Time.time - this.holdDownStartTime;
                 _animator.Play("Jump");
-                _fishbone.ThrowFishbone(CalculateForce(holdDownTime));
+                float calculatedForce = CalculateForce(holdDownTime);
+                _fishbone.ThrowFishbone(calculatedForce, calculatedForce * 2);
                 forceBarObject.SetActive(false);
                 canThrow = false;
             }

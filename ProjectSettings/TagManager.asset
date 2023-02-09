@@ -10,6 +10,7 @@ TagManager:
   - CatBone
   - Cat
   - Dog
+  - MiddleWall
   layers:
   - Default
   - TransparentFX

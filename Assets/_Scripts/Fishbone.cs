@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEditor.UIElements;
 
 public class Fishbone : MonoBehaviour
 {
@@ -28,12 +30,13 @@ public class Fishbone : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    public void ThrowFishbone(float force)
+    
+    public void ThrowFishbone(float jumpPower, float posIncrease)
     {
-        _rigidbody2D.isKinematic = false;
-        var direction = Vector2.up + Vector2.right;
-        _rigidbody2D.velocity = direction * force;
+        Vector2 currentPos = this.transform.position;
+        Vector2 endPos = new Vector2(currentPos.x + posIncrease, 0);
+        //transform.DOJump(endPos, jumpPower, 1, 2);
+        _rigidbody2D.DOJump(endPos, jumpPower, 1, 2);
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,6 +53,11 @@ public class Fishbone : MonoBehaviour
             canRespawnFishbone = true;
             _gameManager.ChangePlayer();
             Destroy(this.gameObject);
+        }
+        if (other.CompareTag("MiddleWall"))
+        {
+            _rigidbody2D.DOKill();
+            this._rigidbody2D.isKinematic = false;
         }
     }
 }

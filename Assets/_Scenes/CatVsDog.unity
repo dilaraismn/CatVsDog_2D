@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 437571989}
   m_Layer: 5
   m_Name: MiddleWallCollider
-  m_TagString: Untagged
+  m_TagString: MiddleWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,8 +510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -310.68173}
-  m_SizeDelta: {x: 93, y: 458.637}
+  m_AnchoredPosition: {x: 0, y: -270.00012}
+  m_SizeDelta: {x: 93, y: 540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!70 &437571989
 CapsuleCollider2D:
@@ -523,11 +523,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.3614995, y: 45.458904}
-  m_Size: {x: 83.286514, y: 547.6304}
+  m_Offset: {x: -2.51, y: 5.23}
+  m_Size: {x: 83.286514, y: 542}
   m_Direction: 0
 --- !u!1 &474544013
 GameObject:

@@ -10,7 +10,7 @@ public class DogPlayer : MonoBehaviour
     [SerializeField] private Transform boneParent;
     [SerializeField] private Image forceBar;
     [SerializeField] private GameObject forceBarObject;
-    private float throwPower = 1000f;
+    private float throwPower = 600;
     private float holdDownStartTime;
     private Animator _animator;
     private Bone _bone;
@@ -59,7 +59,8 @@ public class DogPlayer : MonoBehaviour
                 float holdDownTime = Time.time - this.holdDownStartTime;
                 _animator.Play("Jump");
                 //_bone.ThrowBone(CalculateForce(holdDownTime));
-                _bone.ThrowBone();
+                float calculatedForce = CalculateForce(holdDownTime);
+                _bone.ThrowBone(calculatedForce, calculatedForce * 2);
                 forceBarObject.SetActive(false);
                 canThrow = false;
             }
