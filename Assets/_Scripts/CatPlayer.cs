@@ -17,6 +17,7 @@ public class CatPlayer : MonoBehaviour
     private GameManager _gameManager;
     private GameObject currentFishbone { get; set; }
     private bool canThrow { get; set; }
+    private bool mouseDown;
     
     private void Awake()
     {
@@ -33,35 +34,34 @@ public class CatPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canThrow && !_gameManager.isPlayerDog)
         {
-            if(canThrow)
-            {
-                holdDownStartTime = Time.time;
-                forceBarObject.SetActive(true);
-            }
+            holdDownStartTime = Time.time;
+            forceBarObject.SetActive(true);
+            mouseDown = true;
         }
         
         if (Input.GetMouseButton(0))
         {
-            forceBar.fillAmount += 0.0015f;
-        }
-        
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (canThrow)
+            if (mouseDown)
             {
-                forceBar.fillAmount = 0;
-                float holdDownTime = Time.time - this.holdDownStartTime;
-                _animator.Play("Jump");
-                float calculatedForce = CalculateForce(holdDownTime);
-                _fishbone.ThrowFishbone(calculatedForce, calculatedForce * 2);
-                forceBarObject.SetActive(false);
-                canThrow = false;
+                forceBar.fillAmount += 0.0015f;
             }
         }
         
-        if(Fishbone.canRespawnFishbone && (_gameManager.isPlayerDog == false))
+        if (Input.GetMouseButtonUp(0) && canThrow && !_gameManager.isPlayerDog && mouseDown)
+        {
+            forceBar.fillAmount = 0;
+            float holdDownTime = Time.time - this.holdDownStartTime;
+            _animator.Play("Jump");
+            float calculatedForce = CalculateForce(holdDownTime);
+            _fishbone.ThrowFishbone(calculatedForce, calculatedForce * 2);
+            forceBarObject.SetActive(false);
+            canThrow = false;
+            mouseDown = false;
+        }
+        
+        if(Fishbone.canRespawnFishbone && (!_gameManager.isPlayerDog))
         {
             CreateFishbone();
         }

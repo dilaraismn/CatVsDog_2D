@@ -17,6 +17,7 @@ public class DogPlayer : MonoBehaviour
     private GameManager _gameManager;
     private GameObject currentBone { get; set; }
     private bool canThrow { get; set; }
+    private bool mouseDown;
 
     private void Awake()
     {
@@ -37,33 +38,31 @@ public class DogPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canThrow && _gameManager.isPlayerDog)
         {
-            if(canThrow)
-            {
-                holdDownStartTime = Time.time;
-                forceBarObject.SetActive(true);
-            }
+            holdDownStartTime = Time.time;
+            forceBarObject.SetActive(true);
+            mouseDown = true;
         }
 
         if (Input.GetMouseButton(0))
         {
-            forceBar.fillAmount += 0.0015f;
+            if (mouseDown)
+            {
+                forceBar.fillAmount += 0.0015f;
+            }
         }
         
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && canThrow && _gameManager.isPlayerDog && mouseDown)
         {
-            if (canThrow)
-            {
-                forceBar.fillAmount = 0;
-                float holdDownTime = Time.time - this.holdDownStartTime;
-                _animator.Play("Jump");
-                //_bone.ThrowBone(CalculateForce(holdDownTime));
-                float calculatedForce = CalculateForce(holdDownTime);
-                _bone.ThrowBone(calculatedForce, calculatedForce * 2);
-                forceBarObject.SetActive(false);
-                canThrow = false;
-            }
+            forceBar.fillAmount = 0;
+            float holdDownTime = Time.time - this.holdDownStartTime;
+            _animator.Play("Jump");
+            float calculatedForce = CalculateForce(holdDownTime);
+            _bone.ThrowBone(calculatedForce, calculatedForce * 2);
+            forceBarObject.SetActive(false);
+            canThrow = false;
+            mouseDown = false;
         }
         
         if(Bone.canRespawnBone && _gameManager.isPlayerDog)
