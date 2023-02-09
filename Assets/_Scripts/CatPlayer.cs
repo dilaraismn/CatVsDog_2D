@@ -58,7 +58,6 @@ public class CatPlayer : MonoBehaviour
             _animator.Play("Jump");
             float calculatedForce = CalculateForce(holdDownTime);
             float fixedForce = Mathf.Clamp(calculatedForce, 120, 377);
-            print(fixedForce);
             _fishbone.ThrowFishbone(fixedForce, fixedForce * 2);
             forceBarObject.SetActive(false);
             canThrow = false;

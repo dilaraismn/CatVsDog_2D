@@ -62,7 +62,6 @@ public class DogPlayer : MonoBehaviour
             _animator.Play("Jump");
             float calculatedForce = CalculateForce(holdDownTime);
             float fixedForce = Mathf.Clamp(calculatedForce, 120, 377);
-            print(fixedForce);
             _bone.ThrowBone(fixedForce, fixedForce * 2);
             forceBarObject.SetActive(false);
             canThrow = false;
