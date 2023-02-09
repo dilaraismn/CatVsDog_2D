@@ -15,14 +15,18 @@ public class DogPlayer : MonoBehaviour
     private Animator _animator;
     private Bone _bone;
     private GameManager _gameManager;
+    private Wind _wind;
     private GameObject currentBone { get; set; }
     private bool canThrow { get; set; }
     private bool mouseDown;
+    private float windValue;
+    public static float windForceValue;
 
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
         _gameManager = FindObjectOfType<GameManager>();
+        _wind = FindObjectOfType<Wind>();
     }
 
     private void Start()
@@ -60,9 +64,12 @@ public class DogPlayer : MonoBehaviour
             forceBar.fillAmount = 0;
             float holdDownTime = Time.time - this.holdDownStartTime;
             _animator.Play("Jump");
+            
             float calculatedForce = CalculateForce(holdDownTime);
             float fixedForce = Mathf.Clamp(calculatedForce, 120, 377);
-            _bone.ThrowBone(fixedForce, fixedForce * 2);
+
+            _bone.ThrowBone(fixedForce , (fixedForce - windForceValue) * 2);
+
             forceBarObject.SetActive(false);
             canThrow = false;
             mouseDown = false;
@@ -74,8 +81,23 @@ public class DogPlayer : MonoBehaviour
         }
     }
 
+    private float GetWindForce()
+    {
+        if (_wind.IsWindRight())
+        {
+            windValue = _wind.SetWindForce(windValue);
+        }
+        else
+        {
+            windValue = -_wind.SetWindForce(windValue);
+        }
+        print(windValue);
+        return windValue;
+    }
+    
     private void CreateBone()
     {
+        windForceValue = GetWindForce();
         currentBone = Instantiate(bonePrefab, boneParent.transform.position,Quaternion.identity, boneParent.transform);
         _bone = currentBone.GetComponent<Bone>();
         canThrow = true;

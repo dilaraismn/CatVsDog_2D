@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 17286806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.966875, y: 0.6712161, z: 0.91}
+  m_LocalScale: {x: 0.9291064, y: 0.6292785, z: 0.91}
   m_Children: []
   m_Father: {fileID: 1554020171}
   m_RootOrder: 0
@@ -180,12 +180,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e02aff8f7a314408abd64767fd9dca2, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 90b914bf4f4d349f8b318a660560f7f3, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 0
+  m_FillAmount: 0.1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1178,6 +1178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windRightArrow: {fileID: 1949784337}
   windLeftArrow: {fileID: 1424042611}
+  windBarImage: {fileID: 17286808}
 --- !u!1 &991027263
 GameObject:
   m_ObjectHideFlags: 0

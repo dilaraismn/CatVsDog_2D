@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Wind : MonoBehaviour
 {
    [SerializeField] private GameObject windRightArrow, windLeftArrow;
+   [SerializeField] private Image windBarImage;
+   public static bool isWindRight;
 
    public bool IsWindRight()
    {
@@ -15,22 +18,21 @@ public class Wind : MonoBehaviour
 
       if (direction == "right")
       {
+         isWindRight = true;
+         windRightArrow.SetActive(true);
+         windLeftArrow.SetActive(false);
          return true;
       }
+      isWindRight = false;
+      windLeftArrow.SetActive(true);
+      windRightArrow.SetActive(false);
       return false;
    }
 
-   private void Start()
+   public float SetWindForce(float windForce)
    {
-      if (IsWindRight())
-      {
-         windRightArrow.SetActive(true);
-         windLeftArrow.SetActive(false);
-      }
-      else
-      {
-         windLeftArrow.SetActive(true);
-         windRightArrow.SetActive(false);
-      }
+      windForce = Random.Range(50, 100);
+      windBarImage.fillAmount = windForce / 1000;
+      return windForce;
    }
 }
