@@ -38,6 +38,8 @@ public class DogPlayer : MonoBehaviour
 
     private void Update()
     {
+        if (_gameManager.isGameOver) return;
+
         if (Input.GetMouseButtonDown(0) && canThrow && _gameManager.isPlayerDog)
         {
             holdDownStartTime = Time.time;
@@ -59,7 +61,7 @@ public class DogPlayer : MonoBehaviour
             float holdDownTime = Time.time - this.holdDownStartTime;
             _animator.Play("Jump");
             float calculatedForce = CalculateForce(holdDownTime);
-            float fixedForce = Mathf.Clamp(calculatedForce, 120, 380);
+            float fixedForce = Mathf.Clamp(calculatedForce, 120, 377);
             print(fixedForce);
             _bone.ThrowBone(fixedForce, fixedForce * 2);
             forceBarObject.SetActive(false);

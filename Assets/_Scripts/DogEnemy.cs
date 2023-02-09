@@ -50,6 +50,7 @@ public class DogEnemy : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         this.enabled = false;
         dogIsDead = true;
+        _gameManager.isGameOver = true;
         _gameManager.GameOver();
     }
 }

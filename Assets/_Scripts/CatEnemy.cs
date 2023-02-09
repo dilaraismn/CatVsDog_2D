@@ -50,6 +50,7 @@ public class CatEnemy : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         this.enabled = false;
         catIsDead = true;
+        _gameManager.isGameOver = true;
         _gameManager.GameOver();
         //TO DO: WIN UI
         //TO DO: GAME END

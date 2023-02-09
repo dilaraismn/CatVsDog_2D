@@ -12,12 +12,14 @@ public class GameManager : MonoBehaviour
     private DogPlayer _dogPlayer;
     private CatPlayer _catPlayer;
     public bool isPlayerDog { get; set; }
+    public bool isGameOver { get; set; }
 
     private void Awake()
     {
         _dogPlayer = dogPlayerObject.GetComponent<DogPlayer>();
         _catPlayer = catPlayerObject.GetComponent<CatPlayer>();
         isPlayerDog = true;
+        isGameOver = false;
     }
 
     void Update()
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        isGameOver = false;
     }
 }
