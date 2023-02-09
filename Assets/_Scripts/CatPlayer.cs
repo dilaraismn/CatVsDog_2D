@@ -15,6 +15,7 @@ public class CatPlayer : MonoBehaviour
     private Animator _animator;
     private Fishbone _fishbone;
     private GameManager _gameManager;
+    private Wind _wind;
     private GameObject currentFishbone { get; set; }
     private bool canThrow { get; set; }
     private bool mouseDown;
@@ -23,6 +24,7 @@ public class CatPlayer : MonoBehaviour
     {
         _animator = GetComponentInChildren<Animator>();
         _gameManager = FindObjectOfType<GameManager>();
+        _wind = FindObjectOfType<Wind>();
     }
 
     private void Start()
@@ -56,9 +58,12 @@ public class CatPlayer : MonoBehaviour
             forceBar.fillAmount = 0;
             float holdDownTime = Time.time - this.holdDownStartTime;
             _animator.Play("Jump");
+            
             float calculatedForce = CalculateForce(holdDownTime);
             float fixedForce = Mathf.Clamp(calculatedForce, 120, 377);
-            _fishbone.ThrowFishbone(fixedForce, fixedForce * 2);
+            
+            _fishbone.ThrowFishbone(fixedForce, (fixedForce - DogPlayer.catWindForceValue) * 2);
+            print("Cat: " + DogPlayer.catWindForceValue);
             forceBarObject.SetActive(false);
             canThrow = false;
             mouseDown = false;
@@ -69,6 +74,7 @@ public class CatPlayer : MonoBehaviour
             CreateFishbone();
         }
     }
+    
     
     private void CreateFishbone()
     {

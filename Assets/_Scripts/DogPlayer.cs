@@ -21,6 +21,7 @@ public class DogPlayer : MonoBehaviour
     private bool mouseDown;
     private float windValue;
     public static float windForceValue;
+    public static float catWindForceValue;
 
     private void Awake()
     {
@@ -69,7 +70,7 @@ public class DogPlayer : MonoBehaviour
             float fixedForce = Mathf.Clamp(calculatedForce, 120, 377);
 
             _bone.ThrowBone(fixedForce , (fixedForce - windForceValue) * 2);
-
+            print("Dog: "+ windForceValue);
             forceBarObject.SetActive(false);
             canThrow = false;
             mouseDown = false;
@@ -86,10 +87,12 @@ public class DogPlayer : MonoBehaviour
         if (_wind.IsWindRight())
         {
             windValue = _wind.SetWindForce(windValue);
+            catWindForceValue = -_wind.SetWindForce(windValue);
         }
         else
         {
             windValue = -_wind.SetWindForce(windValue);
+            catWindForceValue = _wind.SetWindForce(windValue);
         }
         print(windValue);
         return windValue;
