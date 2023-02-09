@@ -43,7 +43,7 @@ public class DogPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (_gameManager.isGameOver) return;
+        if (_gameManager.isGameOver || !GameManager.isGameStarted) return;
 
         if (Input.GetMouseButtonDown(0) && canThrow && _gameManager.isPlayerDog)
         {
@@ -70,7 +70,6 @@ public class DogPlayer : MonoBehaviour
             float fixedForce = Mathf.Clamp(calculatedForce, 120, 377);
 
             _bone.ThrowBone(fixedForce , (fixedForce - windForceValue) * 2);
-            print("Dog: "+ windForceValue);
             forceBarObject.SetActive(false);
             canThrow = false;
             mouseDown = false;
@@ -94,7 +93,6 @@ public class DogPlayer : MonoBehaviour
             windValue = -_wind.SetWindForce(windValue);
             catWindForceValue = _wind.SetWindForce(windValue);
         }
-        print(windValue);
         return windValue;
     }
     

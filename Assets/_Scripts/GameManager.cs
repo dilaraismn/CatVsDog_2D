@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject dogPlayerObject, catPlayerObject;
     [SerializeField] private GameObject dogIndicator, catIndicator;
-    [SerializeField] private GameObject gameOverUI, catWinImage, dogWinImage;
+    [SerializeField] private GameObject gameOverUI, inGameUI, startUI;
+    [SerializeField] private GameObject catWinImage, dogWinImage;
     private DogPlayer _dogPlayer;
     private CatPlayer _catPlayer;
     public bool isPlayerDog { get; set; }
     public bool isWinnerDog { get; set; }
     public bool isGameOver { get; set; }
+    public static bool isGameStarted;
 
     private void Awake()
     {
@@ -21,6 +23,13 @@ public class GameManager : MonoBehaviour
         _catPlayer = catPlayerObject.GetComponent<CatPlayer>();
         isPlayerDog = true;
         isGameOver = false;
+    }
+
+    private void Start()
+    {
+        isGameStarted = false;
+        inGameUI.SetActive(false);
+        startUI.SetActive(true);
     }
 
     void Update()
@@ -41,6 +50,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartGame()
+    {
+        startUI.SetActive(false);
+        inGameUI.SetActive(true);
+        isGameStarted = true;
+    }
     public void ChangePlayer()
     {
         isPlayerDog = !isPlayerDog;

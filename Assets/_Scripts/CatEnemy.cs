@@ -53,7 +53,5 @@ public class CatEnemy : MonoBehaviour
         _gameManager.isGameOver = true;
         _gameManager.isWinnerDog = true;
         _gameManager.GameOver();
-        //TO DO: WIN UI
-        //TO DO: GAME END
     }
 }

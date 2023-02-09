@@ -36,8 +36,8 @@ public class CatPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (_gameManager.isGameOver) return;
-        
+        if (_gameManager.isGameOver || !GameManager.isGameStarted) return;
+
         if (Input.GetMouseButtonDown(0) && canThrow && !_gameManager.isPlayerDog)
         {
             holdDownStartTime = Time.time;
@@ -63,7 +63,6 @@ public class CatPlayer : MonoBehaviour
             float fixedForce = Mathf.Clamp(calculatedForce, 120, 377);
             
             _fishbone.ThrowFishbone(fixedForce, (fixedForce - DogPlayer.catWindForceValue) * 2);
-            print("Cat: " + DogPlayer.catWindForceValue);
             forceBarObject.SetActive(false);
             canThrow = false;
             mouseDown = false;

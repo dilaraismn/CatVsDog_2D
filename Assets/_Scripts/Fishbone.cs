@@ -35,7 +35,6 @@ public class Fishbone : MonoBehaviour
     {
         Vector2 currentPos = this.transform.position;
         Vector2 endPos = new Vector2(currentPos.x + posIncrease, 0);
-        //transform.DOJump(endPos, jumpPower, 1, 2);
         _rigidbody2D.DOJump(endPos, jumpPower, 1, 1.5f);
     }
     
