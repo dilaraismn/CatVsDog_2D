@@ -18,7 +18,8 @@ public class CatPlayer : MonoBehaviour
     private GameObject currentFishbone { get; set; }
     private bool canThrow { get; set; }
     private bool mouseDown;
-    
+    private float holdTimeNormalized;
+
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -42,13 +43,13 @@ public class CatPlayer : MonoBehaviour
             holdDownStartTime = Time.time;
             forceBarObject.SetActive(true);
             mouseDown = true;
-        }
+        } 
         
         if (Input.GetMouseButton(0))
         {
             if (mouseDown)
             {
-                forceBar.fillAmount += 0.0017f;
+                forceBar.fillAmount += 0.002f;
             }
         }
         
@@ -59,9 +60,9 @@ public class CatPlayer : MonoBehaviour
 
             float holdDownTime = Time.time - this.holdDownStartTime;
             float calculatedForce = CalculateForce(holdDownTime);
-            float fixedForce = Mathf.Clamp(calculatedForce, 2, 20);
-            //_fishbone.ThrowFishbone(fixedForce, (fixedForce - DogPlayer.catWindForceValue) * 2);
-            _fishbone.ThrowFishbone(fixedForce, (fixedForce *2));
+            float fixedHight = Mathf.Clamp(calculatedForce, .5f, 7.5f);
+            float fixedPosX = Mathf.Clamp(calculatedForce, 3, 10);
+            _fishbone.ThrowFishbone(fixedHight, (fixedPosX * 2));
             
             forceBarObject.SetActive(false);
             canThrow = false;
@@ -86,9 +87,8 @@ public class CatPlayer : MonoBehaviour
     private float CalculateForce(float holdTime)
     {
         float maxForceHoldTime = 2f;
-        float holdTimeNormalized = Mathf.Clamp01(holdTime / maxForceHoldTime);
-        print(holdTimeNormalized);
-        float throwForce = holdTimeNormalized +7;
+        holdTimeNormalized = Mathf.Clamp(holdTime, 0.1f, maxForceHoldTime);
+        float throwForce = holdTimeNormalized * 10;
         return throwForce;
     }
 }

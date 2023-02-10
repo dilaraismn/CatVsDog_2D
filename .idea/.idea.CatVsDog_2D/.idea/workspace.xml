@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="217ec239-fb67-40f6-af75-b05f092238eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CatVsDog_2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/CatBone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/CatBone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/DogBone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/DogBone.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/CatVsDog.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Bone.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/CatPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/CatPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Fishbone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Fishbone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Wind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Wind.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +19,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/DogPlayer.cs" root0="FORCE_HIGHLIGHTING" />

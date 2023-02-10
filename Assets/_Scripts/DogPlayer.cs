@@ -21,6 +21,7 @@ public class DogPlayer : MonoBehaviour
     private float windValue;
     public static float windForceValue;
     public static float catWindForceValue;
+    private float holdTimeNormalized;
 
     private void Awake()
     {
@@ -55,7 +56,7 @@ public class DogPlayer : MonoBehaviour
         {
             if (mouseDown)
             {
-                forceBar.fillAmount += 0.0017f;
+                forceBar.fillAmount += 0.002f;
             }
         }
         
@@ -66,10 +67,10 @@ public class DogPlayer : MonoBehaviour
 
             float holdDownTime = Time.time - this.holdDownStartTime;
             float calculatedForce = CalculateForce(holdDownTime);
-            float fixedForce = Mathf.Clamp(calculatedForce, 2, 20);                     
+            float fixedHight = Mathf.Clamp(calculatedForce, .5f, 7.5f);               
+            float fixedPosX = Mathf.Clamp(calculatedForce, 3, 10);
             //bone.ThrowBone(fixedForce , (fixedForce - windForceValue));
-            _bone.ThrowBone(fixedForce, (fixedForce * 2));
-            print(fixedForce);
+            _bone.ThrowBone(fixedHight, (fixedPosX * 2));
           
             forceBarObject.SetActive(false);
             canThrow = false;
@@ -108,8 +109,9 @@ public class DogPlayer : MonoBehaviour
     private float CalculateForce(float holdTime)
     {
         float maxForceHoldTime = 2f;
-        float holdTimeNormalized = Mathf.Clamp01(holdTime / maxForceHoldTime);
-        float throwForce = holdTimeNormalized +7;
+        holdTimeNormalized = Mathf.Clamp(holdTime, 0.1f, maxForceHoldTime);
+        //float holdTimeNormalized = Mathf.Clamp01(holdTime / maxForceHoldTime);
+        float throwForce = holdTimeNormalized * 10;
         return throwForce;
     }
 }
