@@ -31,7 +31,7 @@ public class Wind : MonoBehaviour
 
    public float SetWindForce(float windForce)
    {
-      windForce = Random.Range(50, 100);
+      windForce = Random.Range(5, 10);
       if (windForce <= 65)
       {
          windBarImage.fillAmount = 0.35f;

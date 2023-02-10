@@ -902,15 +902,15 @@ Canvas:
   m_GameObject: {fileID: 504718843}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 264994149}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 31
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2802,7 +2802,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4, y: 0}
+  m_Offset: {x: -5, y: -2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2813,7 +2813,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 55, y: 90}
+  m_Size: {x: 43, y: 88}
   m_EdgeRadius: 0
 --- !u!1 &1424042611
 GameObject:
@@ -4149,9 +4149,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1850297456}
-  - component: {fileID: 1850297458}
   - component: {fileID: 1850297459}
   - component: {fileID: 1850297457}
+  - component: {fileID: 1850297458}
   m_Layer: 5
   m_Name: Cat
   m_TagString: Cat
@@ -4205,7 +4205,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -767.3778, y: -322.65533}
+  m_Offset: {x: -769.2157, y: -330.39166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4216,7 +4216,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 195.85687, y: 315.063}
+  m_Size: {x: 150.82593, y: 308.20526}
   m_EdgeRadius: 0
 --- !u!114 &1850297459
 MonoBehaviour:

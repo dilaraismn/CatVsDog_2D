@@ -43,8 +43,8 @@ public class Bone : MonoBehaviour
         transform.position = MathParabola.Parabola(Vector2.zero, Vector2.left  * 10f, 5f, parabolAnim / 5f);*/
 
         Vector2 currentPos = this.transform.position;
-        Vector2 endPos = new Vector2(currentPos.x - posIncrease, 0);
-        _rigidbody2D.DOJump(endPos, jumpPower, 1, 1.5f);
+        Vector2 endPos = new Vector2(currentPos.x - posIncrease, -5);
+        _rigidbody2D.DOJump(endPos, jumpPower, 1, 2);
     }
     
     private void OnTriggerEnter2D(Collider2D other)
