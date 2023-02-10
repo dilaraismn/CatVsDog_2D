@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -69,7 +66,6 @@ public class DogPlayer : MonoBehaviour
             float calculatedForce = CalculateForce(holdDownTime);
             float fixedHight = Mathf.Clamp(calculatedForce, .5f, 7.5f);               
             float fixedPosX = Mathf.Clamp(calculatedForce, 3, 10);
-            //bone.ThrowBone(fixedForce , (fixedForce - windForceValue));
             _bone.ThrowBone(fixedHight, (fixedPosX * 2) - windForceValue);
           
             forceBarObject.SetActive(false);
@@ -110,7 +106,6 @@ public class DogPlayer : MonoBehaviour
     {
         float maxForceHoldTime = 2f;
         holdTimeNormalized = Mathf.Clamp(holdTime, 0.1f, maxForceHoldTime);
-        //float holdTimeNormalized = Mathf.Clamp01(holdTime / maxForceHoldTime);
         float throwForce = holdTimeNormalized * 10;
         return throwForce;
     }

@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEditor.UIElements;
 
 public class Fishbone : MonoBehaviour
 {
@@ -50,7 +46,6 @@ public class Fishbone : MonoBehaviour
         if (other.CompareTag("Dog"))
         {
             canRespawnFishbone = true;
-            //_gameManager.ChangePlayer();
             Destroy(this.gameObject);
         }
         if (other.CompareTag("MiddleWall"))
