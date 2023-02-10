@@ -31,16 +31,30 @@ public class Wind : MonoBehaviour
 
    public float SetWindForce(float windForce)
    {
-      windForce = Random.Range(5, 10);
-      if (windForce <= 65)
-      {
-         windBarImage.fillAmount = 0.35f;
-      }
-      else
-      {
-         windBarImage.fillAmount = windForce /100;
-      }
+      // 6-20
+      windForce = Random.Range(3, 7);
+      print(windForce);
 
+      if (windForce == 3)
+      {
+         windBarImage.fillAmount = .2f;
+      }
+      else if (windForce == 4) // 5-6
+      {
+         windBarImage.fillAmount = .4f;
+      }
+      else if (windForce == 5)
+      {
+         windBarImage.fillAmount = .6f;
+      }
+      else if (windForce == 6)
+      {
+         windBarImage.fillAmount = .8f;
+      }
+      else if (windForce == 7)
+      {
+         windBarImage.fillAmount = 1f;
+      }
       return windForce;
    }
 }

@@ -70,7 +70,7 @@ public class DogPlayer : MonoBehaviour
             float fixedHight = Mathf.Clamp(calculatedForce, .5f, 7.5f);               
             float fixedPosX = Mathf.Clamp(calculatedForce, 3, 10);
             //bone.ThrowBone(fixedForce , (fixedForce - windForceValue));
-            _bone.ThrowBone(fixedHight, (fixedPosX * 2));
+            _bone.ThrowBone(fixedHight, (fixedPosX * 2) - windForceValue);
           
             forceBarObject.SetActive(false);
             canThrow = false;

@@ -62,7 +62,7 @@ public class CatPlayer : MonoBehaviour
             float calculatedForce = CalculateForce(holdDownTime);
             float fixedHight = Mathf.Clamp(calculatedForce, .5f, 7.5f);
             float fixedPosX = Mathf.Clamp(calculatedForce, 3, 10);
-            _fishbone.ThrowFishbone(fixedHight, (fixedPosX * 2));
+            _fishbone.ThrowFishbone(fixedHight, (fixedPosX * 2) - DogPlayer.catWindForceValue);
             
             forceBarObject.SetActive(false);
             canThrow = false;
