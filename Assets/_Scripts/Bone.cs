@@ -44,7 +44,7 @@ public class Bone : MonoBehaviour
 
         Vector2 currentPos = this.transform.position;
         Vector2 endPos = new Vector2(currentPos.x - posIncrease, -5);  // -5 yer anlamında
-        _rigidbody2D.DOJump(endPos, jumpPower, 1, 1.7f);
+        _rigidbody2D.DOJump(endPos, jumpPower, 1, 2f);
     }
     
     private void OnTriggerEnter2D(Collider2D other)

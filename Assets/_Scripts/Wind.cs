@@ -8,7 +8,8 @@ using Random = UnityEngine.Random;
 public class Wind : MonoBehaviour
 {
    [SerializeField] private GameObject windRightArrow, windLeftArrow;
-   [SerializeField] private Image windBarImage;
+   [SerializeField] private Image windBarImageLeft, windBarImageRight;
+   private Image currentBarImage { get; set; }
    public static bool isWindRight;
 
    public bool IsWindRight()
@@ -21,40 +22,39 @@ public class Wind : MonoBehaviour
          isWindRight = true;
          windRightArrow.SetActive(true);
          windLeftArrow.SetActive(false);
+         windBarImageRight.gameObject.SetActive(true);
+         windBarImageLeft.gameObject.SetActive(false);
+         currentBarImage = windBarImageRight;
          return true;
       }
       isWindRight = false;
       windLeftArrow.SetActive(true);
       windRightArrow.SetActive(false);
+      windBarImageRight.gameObject.SetActive(false);
+      windBarImageLeft.gameObject.SetActive(true);
+      currentBarImage = windBarImageLeft;
       return false;
    }
 
    public float SetWindForce(float windForce)
    {
       // 6-20
-      windForce = Random.Range(3, 7);
+      windForce = Random.Range(3, 5);
       print(windForce);
 
       if (windForce == 3)
       {
-         windBarImage.fillAmount = .2f;
+         currentBarImage.fillAmount = 1f;
       }
       else if (windForce == 4) // 5-6
       {
-         windBarImage.fillAmount = .4f;
+         currentBarImage.fillAmount = .6f;
       }
       else if (windForce == 5)
       {
-         windBarImage.fillAmount = .6f;
+         currentBarImage.fillAmount = .3f;
       }
-      else if (windForce == 6)
-      {
-         windBarImage.fillAmount = .8f;
-      }
-      else if (windForce == 7)
-      {
-         windBarImage.fillAmount = 1f;
-      }
+
       return windForce;
    }
 }
